@@ -41,7 +41,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   </a>
                 </li>
               ))}
-              <li>
+              <li className="tooltip tooltip-left" data-tip="Creafted by me with GatsbyJS">
                 <StaticImage
                   src="../images/logo-farrid-dev.png"
                   alt="Farrid-Dev Logo"
@@ -70,7 +70,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <div className="flex py-4">
               <label
                 htmlFor="cv-modal"
-                className="bg-[#544A4B] text-[#B49775] font-semibold px-5 py-3 rounded-md cursor-pointer mr-6"
+                className="bg-[#544A4B] text-white font-semibold px-5 py-3 rounded-md cursor-pointer mr-6"
               >
                 See My Cv
               </label>
