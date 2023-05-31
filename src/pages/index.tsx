@@ -1,6 +1,7 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import 'animate.css'
 
 const menuBar = [
   {
@@ -13,7 +14,8 @@ const menuBar = [
   },
   {
     text: "Blog",
-    url: "#"
+    url: "#",
+    modalTag: 'soon-modal'
   },
   {
     text: "Github",
@@ -25,7 +27,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <main className="container mx-auto py-4">
       <div className="grid grid-cols-2 gap-2">
-        <div className="flex tooltip tooltip-bottom" data-tip="Ahooy, Thank you for hover me!">
+        <div className="flex tooltip tooltip-bottom animate__animated animate__slideInLeft" data-tip="Ahooy, Thank you for hover me!">
           <StaticImage
             src="../images/hero-banner-farrid-dev.png" 
             alt="Farrid-Dev Hero Banner"
@@ -33,15 +35,17 @@ const IndexPage: React.FC<PageProps> = () => {
           />
         </div>
         <div className="py-4">
-            <ul className="flex justify-between items-center">
+            <ul className="flex justify-between items-center animate__animated animate__slideInUp">
               {menuBar.map((menu, index) => (
                 <li key={index}>
-                  <a href={menu.url} target="_blank" className="cursor-pointer">
-                    {menu.text}
-                  </a>
+                  <label htmlFor={menu.modalTag}>
+                    <a href={menu.url} target="_blank" className="cursor-pointer">
+                      {menu.text}
+                    </a>
+                  </label>
                 </li>
               ))}
-              <li className="tooltip tooltip-left" data-tip="Creafted by me with GatsbyJS">
+              <li className="tooltip tooltip-left animate__animated animate__jackInTheBox" data-tip="Creafted by me with GatsbyJS">
                 <StaticImage
                   src="../images/logo-farrid-dev.png"
                   alt="Farrid-Dev Logo"
@@ -51,13 +55,18 @@ const IndexPage: React.FC<PageProps> = () => {
             </ul>
 
 
-          <div className="pt-10">
-            <h3 className="text-2xl font-bold text-[#B49775] tooltip" data-tip="Ahooy, Nice to e-meet you!">Farrid Kuntoro</h3>
+          <div className="pt-10 animate__animated animate__slideInRight">
+            <h3
+              className="text-2xl font-bold text-[#B49775] tooltip animate__animated animate__jackInTheBox animate__slowest"
+              data-tip="Ahooy, Nice to e-meet you!"
+            >
+              Farrid Kuntoro
+            </h3>
             <p
               className="text-6xl font-bold">
                 Software <br/> Engineer Based <br /> in
                 <span
-                  className="text-[#B49775] tooltip tooltip-top ml-2"
+                  className="text-[#B49775] tooltip tooltip-top ml-2 animate__animated animate__jackInTheBox animate__slow"
                   data-tip="I'm based in Jakarta, Indonesia"
                 >
                   Jakarta
@@ -72,7 +81,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 htmlFor="cv-modal"
                 className="bg-[#544A4B] text-white font-semibold px-5 py-3 rounded-md cursor-pointer mr-6"
               >
-                See My Cv
+                See CV
               </label>
               <label
                 htmlFor="wn-modal"
@@ -84,7 +93,7 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-4 pt-10">
+      <div className="grid grid-cols-4 gap-4 pt-10 animate__animated animate__slideInUp">
         <div className="flex items-center">
           <h1
             className="text-7xl font-bold text-[#B49775] pr-2 tooltip tooltip-right"
@@ -182,6 +191,25 @@ const IndexPage: React.FC<PageProps> = () => {
               <a href="http://links.farrid.dev/linkedin" target="_blank">
                 Go to LinkedIn ✅
               </a>
+            </label>
+          </div>
+        </label>
+      </label>
+
+      {/* soon modal */}
+      <input type="checkbox" id="soon-modal" className="modal-toggle" />
+      <label htmlFor="soon-modal" className="modal cursor-pointer">
+        <label className="modal-box relative" htmlFor="">
+          <h3 className="font-bold text-lg mr-2">⚠️ Under Construction</h3>
+          <p className="py-4">
+            My personal blogs still under construction to serve great content ever seen, so stay tunes!.
+          </p>
+          <div className="modal-action">
+            <label
+              htmlFor="cv-modal"
+              className="bg-[#544A4B] text-white font-semibold px-5 py-3 rounded-md cursor-pointer"
+            >
+              I will see soon
             </label>
           </div>
         </label>
