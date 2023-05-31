@@ -97,11 +97,11 @@ const IndexPage: React.FC<PageProps> = () => {
         <div className="flex items-center">
           <h1
             className="text-7xl font-bold text-[#B49775] pr-2 tooltip tooltip-right"
-            data-tip="I was handle more than 10+ project based on my experience"
+            data-tip="Based JS/TS Web Frameworks (ex: ReactJS/NextJS/Gatsby/VueJS), React Native (Android/iOS), NodeJS, Git, and Laravel are my main expertise"
           >
-            10+
+            8+
           </h1>
-          <h3 className="text-2xl">Project <br /> Based</h3>
+          <h3 className="text-2xl">Main <br /> Expertise</h3>
         </div>
         <div className="flex items-center">
           <h1
