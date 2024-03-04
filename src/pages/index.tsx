@@ -10,7 +10,7 @@ const menuBar = [
   },
   {
     text: "Works",
-    url: "#"
+    url: "/works"
   },
   {
     text: "Blog",
